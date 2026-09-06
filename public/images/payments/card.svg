@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <circle cx="30" cy="30" r="30" fill="#1A1F71"/>
+  <!-- Card icon -->
+  <rect x="12" y="20" width="36" height="24" rx="4" fill="#1E40AF" stroke="#60A5FA" stroke-width="1"/>
+  <!-- Stripe -->
+  <rect x="12" y="26" width="36" height="6" fill="#1D4ED8"/>
+  <!-- Chip -->
+  <rect x="16" y="32" width="10" height="7" rx="1.5" fill="#F59E0B"/>
+  <!-- CARD text -->
+  <text x="38" y="38" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" font-style="italic">CARD</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <circle cx="30" cy="30" r="30" fill="#00A651"/>
+  <!-- Decorative circle -->
+  <circle cx="46" cy="14" r="12" fill="#00C060" opacity="0.4"/>
+  <!-- ZAMTEL text -->
+  <text x="30" y="28" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" letter-spacing="1">ZAMTEL</text>
+  <!-- Kwacha -->
+  <text x="30" y="40" font-family="Arial,sans-serif" font-size="9" fill="white" text-anchor="middle" opacity="0.9">Kwacha</text>
+</svg>
