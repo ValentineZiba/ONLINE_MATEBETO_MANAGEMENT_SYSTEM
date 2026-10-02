@@ -1,11 +1,11 @@
 <div>
     <div class="bg-stone-900 py-16 text-center">
-        <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-3">Track Your Order</h1>
-        <p class="text-stone-400">Enter your order number to see real-time status updates</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-3 animate-fade-in-up">Track Your Order</h1>
+        <p class="text-stone-400 animate-fade-in-up stagger-1">Enter your order number to see real-time status updates</p>
     </div>
     <div class="max-w-2xl mx-auto px-4 py-12">
         {{-- Search Form --}}
-        <div class="bg-white rounded-2xl shadow-sm border border-stone-100 p-6 mb-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-stone-100 p-6 mb-8 animate-fade-in-up stagger-2">
             <div class="flex gap-3">
                 <input wire:model="orderNumber" wire:keydown.enter="track" type="text"
                        placeholder="e.g. ORD-ABCD1234"
@@ -22,7 +22,7 @@
         </div>
 
         @if($order)
-        <div class="space-y-6">
+        <div class="space-y-6 animate-fade-in-up">
             {{-- Order Header --}}
             <div class="bg-white rounded-2xl shadow-sm border border-stone-100 p-6">
                 <div class="flex items-start justify-between mb-4">

@@ -1,12 +1,12 @@
 <div>
     <div class="bg-stone-900 py-16 text-center">
-        <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-3">Make a Reservation</h1>
-        <p class="text-stone-400 max-w-xl mx-auto">Book your table and enjoy a memorable dining experience at Matebeto</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-3 animate-fade-in-up">Make a Reservation</h1>
+        <p class="text-stone-400 max-w-xl mx-auto animate-fade-in-up stagger-1">Book your table and enjoy a memorable dining experience at Matebeto</p>
     </div>
 
     <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
         @if($submitted)
-        <div class="text-center py-12 bg-white rounded-3xl shadow-sm border border-stone-100">
+        <div class="text-center py-12 bg-white rounded-3xl shadow-sm border border-stone-100 animate-pop-in">
             <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span class="text-5xl">🎉</span>
             </div>
@@ -41,7 +41,7 @@
             </div>
         </div>
         @else
-        <div class="bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden">
+        <div class="bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden animate-fade-in-up">
             <div class="grid grid-cols-1 lg:grid-cols-3">
                 {{-- Form --}}
                 <div class="lg:col-span-2 p-8">

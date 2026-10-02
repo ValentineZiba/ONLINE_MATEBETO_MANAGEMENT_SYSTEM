@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
+use Livewire\Attributes\Layout;
 use Livewire\Volt\Component;
 
-new class extends Component {
+new #[Layout('components.layouts.public', ['title' => 'Settings'])] class extends Component {
     public string $current_password = '';
     public string $password = '';
     public string $password_confirmation = '';
@@ -37,7 +38,7 @@ new class extends Component {
     }
 }; ?>
 
-<section class="w-full">
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-10 w-full animate-fade-in-up">
     @include('partials.settings-heading')
 
     <x-settings.layout heading="Update password" subheading="Ensure your account is using a long, random password to stay secure">

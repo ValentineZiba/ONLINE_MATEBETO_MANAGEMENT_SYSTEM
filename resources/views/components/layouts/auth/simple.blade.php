@@ -30,7 +30,7 @@
             }
         </style>
     </head>
-    <body class="min-h-screen antialiased overflow-hidden">
+    <body class="min-h-screen antialiased">
 
         {{-- Full-screen sunburst background --}}
         <div class="sunburst min-h-screen flex items-center justify-center p-4 relative">
@@ -39,7 +39,7 @@
             <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(120,53,15,0.35) 0%, transparent 70%)"></div>
 
             {{-- Login card --}}
-            <div class="relative z-10 w-full max-w-sm">
+            <div class="relative z-10 w-full max-w-sm animate-pop-in">
 
                 {{-- Card --}}
                 <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">

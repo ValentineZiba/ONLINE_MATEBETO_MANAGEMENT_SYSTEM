@@ -1,5 +1,4 @@
-<div class="relative mb-6 w-full">
-    <flux:heading size="xl" level="1">Settings</flux:heading>
-    <flux:subheading size="lg" class="mb-6">Manage your profile and account settings</flux:subheading>
-    <flux:separator variant="subtle" />
+<div class="mb-8">
+    <h1 class="font-display text-3xl font-bold text-stone-800">Account Settings</h1>
+    <p class="text-stone-500 mt-1">Manage your profile, password, and preferences</p>
 </div>
