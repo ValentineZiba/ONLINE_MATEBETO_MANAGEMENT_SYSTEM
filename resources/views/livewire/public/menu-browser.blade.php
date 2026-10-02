@@ -10,8 +10,8 @@
 
     {{-- Order Success Banner --}}
     @if($orderPlaced)
-    <div class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl">
+    <div class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 animate-fade-in">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl animate-pop-in">
             <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
             </div>
@@ -29,8 +29,8 @@
 
     {{-- Page Header --}}
     <div class="bg-stone-900 py-16 text-center">
-        <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-3">Our Menu</h1>
-        <p class="text-stone-400 max-w-xl mx-auto">Discover our carefully crafted selection of Zambian and international dishes</p>
+        <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-3 animate-fade-in-up">Our Menu</h1>
+        <p class="text-stone-400 max-w-xl mx-auto animate-fade-in-up stagger-1">Discover our carefully crafted selection of Zambian and international dishes</p>
     </div>
 
     {{-- Featured Dishes Carousel --}}
@@ -43,7 +43,7 @@
             </div>
             <div class="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
                 @foreach($featuredItems as $item)
-                <div class="group relative flex-shrink-0 w-64 snap-start bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div class="group relative flex-shrink-0 w-64 snap-start bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 animate-fade-in-up stagger-{{ ($loop->iteration - 1) % 6 + 1 }}">
                     <div class="relative overflow-hidden" style="height:160px">
                         @if($item->image)
                         <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}"
@@ -89,7 +89,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                         Cart ({{ $cartCount }})
                         @if($cartCount > 0)
-                        <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">{{ $cartCount }}</span>
+                        <span wire:key="cart-badge-{{ $cartCount }}" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold animate-badge-bounce">{{ $cartCount }}</span>
                         @endif
                     </button>
                 </div>
@@ -118,7 +118,7 @@
                 @else
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     @foreach($items as $item)
-                    <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 hover:-translate-y-1">
+                    <div wire:key="menu-item-{{ $item->id }}" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100 hover:-translate-y-1 animate-fade-in-up stagger-{{ ($loop->iteration - 1) % 6 + 1 }}">
                         {{-- Image area --}}
                         <div class="relative overflow-hidden" style="height:220px">
                             @if($item->image)
@@ -192,8 +192,8 @@
     {{-- Cart Drawer (Livewire-powered) --}}
     @if($cartOpen)
     <div class="fixed inset-0 z-50 flex" x-data>
-        <div class="absolute inset-0 bg-black/50" wire:click="$set('cartOpen', false)"></div>
-        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col">
+        <div class="absolute inset-0 bg-black/50 animate-fade-in" wire:click="$set('cartOpen', false)"></div>
+        <div class="absolute right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col animate-slide-in-right">
             <div class="flex items-center justify-between p-6 border-b">
                 <h2 class="font-display text-xl font-bold text-stone-800">Your Cart ({{ $cartCount }})</h2>
                 <button wire:click="$set('cartOpen', false)" class="p-2 rounded-xl hover:bg-stone-100 transition-colors text-stone-500">
@@ -260,8 +260,8 @@
     {{-- Checkout Modal --}}
     @if($checkoutOpen)
     <div class="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4">
-        <div class="absolute inset-0 bg-black/60" wire:click="$set('checkoutOpen', false)"></div>
-        <div class="relative bg-white sm:rounded-3xl rounded-t-3xl shadow-2xl w-full max-w-lg max-h-[92vh] overflow-y-auto">
+        <div class="absolute inset-0 bg-black/60 animate-fade-in" wire:click="$set('checkoutOpen', false)"></div>
+        <div class="relative bg-white sm:rounded-3xl rounded-t-3xl shadow-2xl w-full max-w-lg max-h-[92vh] overflow-y-auto animate-pop-in">
             <div class="p-4 sm:p-6 border-b flex items-center justify-between sticky top-0 bg-white sm:rounded-t-3xl rounded-t-3xl">
                 <h2 class="font-display text-lg sm:text-xl font-bold text-stone-800">Complete Your Order</h2>
                 <button wire:click="$set('checkoutOpen', false)" class="p-2 rounded-xl hover:bg-stone-100 text-stone-500 transition-colors">✕</button>
